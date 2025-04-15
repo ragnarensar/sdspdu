@@ -4,7 +4,7 @@
 require_once('TetraSDS/PDU.decode.php');
 
 $longopts  = array(                     
-    "pdu:",             // Required value PDU of a Tetra Transport Layer SDS
+    "pdu:",            // required value: PDU of a Tetra Transport Layer SDS
     "output:",         // output format: json (--output json)
 );                                                                                   
                                                                                      
