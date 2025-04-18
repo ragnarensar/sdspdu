@@ -15,7 +15,7 @@ $> php SDSencode.php --ProtoIdent 10 --PduType 0 --TimeElapsed 0 --PosErr 7 --Ho
 
 #### Call with arguments in an escaped JSON string
 ```
-$> php repos/git/github.com/ragnarensar/sdspdu/SDSencode.php --format json --input "{\"ProtoIdent\": 10, \"PduType\": 0, \"TimeElapsed\": 0, \"PosErr\": 7, \"HorVeloc\": 127, \"DirOfTravel\": 15, \"TypeOfAddData\": 0, \"ReasonForSending\": 20, \"Longitude\": 13.000000, \"Latitude\": 52.000000}"
+$> php SDSencode.php --format json --input "{\"ProtoIdent\": 10, \"PduType\": 0, \"TimeElapsed\": 0, \"PosErr\": 7, \"HorVeloc\": 127, \"DirOfTravel\": 15, \"TypeOfAddData\": 0, \"ReasonForSending\": 20, \"Longitude\": 13.000000, \"Latitude\": 52.000000}"
 
 0A0093E93A4FA4FFFFE14
 ```
@@ -71,7 +71,7 @@ $> php SDSdecode.php --pdu 8200FF015768617427732075703F --output json
 
 #### Call for an output to be read as an array in Bash
 ```
-$> php repos/git/github.com/ragnarensar/sdspdu/SDSdecode.php --pdu 0A0093E93A4FA4FFFFE14
+$> php SDSdecode.php --pdu 0A0093E93A4FA4FFFFE14
 
 PDUelements["StringPos"]="84"
 PDUelements["ProtoIdent_value"]="10"
@@ -94,7 +94,7 @@ PDUelements["ReasonForSending_name"]="User application initiated"
 
 #### Called for an output as a JSON string
 ```
-$ php repos/git/github.com/ragnarensar/sdspdu/SDSdecode.php --pdu 0A0093E93A4FA4FFFFE14 --output json
+$ php SDSdecode.php --pdu 0A0093E93A4FA4FFFFE14 --output json
 
 {"StringPos":84,"ProtoIdent":{"value":10,"name":"Location Information Protocol"},"PduType":{"value":0,"name":"Short location report"},"TimeElapsed":{"value":0,"name":"less than 5 s"},"Longitude":12.999991,"Latitude":51.999997,"PosErr":{"value":7,"name":"Position error not known"},"HorVeloc":"not known","DirOfTravel":337.5,"TypeOfAddData":{"value":0,"name":"Reason for sending"},"ReasonForSending":{"value":20,"name":"User application initiated"}}
 ```
