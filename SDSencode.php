@@ -4,6 +4,8 @@
 require_once('TetraSDS/PDU.encode.php');
 
 $longopts  = array(
+    "format:",
+    "input:",
     "ProtoIdent:",		// Required value
     "PduType:",    		// LIP -> PDU type 2 Bit [0-3]
     "PduTypeExt:",		// LIP -> PDU type extension 4 Bit [0-15]
@@ -29,10 +31,13 @@ $longopts  = array(
     "Text:",			// TXT -> User data - Bit Length variable
 );
 
-$PDUelements=array();
+$args=array();
+foreach(getopt("", $longopts) as $key => $value) $args[$key] = $value;
 
-foreach(getopt("", $longopts) as $key => $value) $PDUelements[$key] = $value;
+if (array_key_exists('format', $args) && $args['format'] == 'json' && $args['input']) {
+    $args = json_decode($args['input'],JSON_UNESCAPED_UNICODE);
+}
 
-echo PDU_encode($PDUelements);
+echo PDU_encode($args);
 
 ?>
