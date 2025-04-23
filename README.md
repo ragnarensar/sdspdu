@@ -92,7 +92,7 @@ PDUelements["ReasonForSending_value"]="20"
 PDUelements["ReasonForSending_name"]="User application initiated"
 ```
 
-#### Called for an output as a JSON string
+#### Call for an output as a JSON string
 ```
 $ php SDSdecode.php --pdu 0A0093E93A4FA4FFFFE14 --output json
 
