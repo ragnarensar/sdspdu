@@ -532,6 +532,7 @@ function make_LocInfoDest ($PDUelements)
           break;
         case 2:        // SSI and MNI
           $ret = "0010";
+          $ret .= substr(hextobin(dechex($PDUelements["addr"])),0,48);
           break;
         case 3:        // IP address (Version 4) RFC 791 [3]
           $ret = "0011";
