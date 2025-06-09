@@ -528,11 +528,13 @@ function make_LocInfoDest ($PDUelements)
           break;
         case 1:        // SSI
           $ret = "0001";
-          $ret .= substr(hextobin(dechex($PDUelements["addr"])),0,24);
+          $ret .= hextobin(dechex($PDUelements["ssi"]));
           break;
         case 2:        // SSI and MNI
           $ret = "0010";
-          $ret .= substr(hextobin(dechex($PDUelements["addr"])),0,48);
+          $ret .= hextobin(dechex($PDUelements["ssi"]));
+          $ret .= hextobin(dechex($PDUelements["mcc"]));
+          $ret .= hextobin(dechex($PDUelements["mnc"]));
           break;
         case 3:        // IP address (Version 4) RFC 791 [3]
           $ret = "0011";
