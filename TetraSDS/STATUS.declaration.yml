@@ -1,0 +1,102 @@
+---
+
+tetra:
+
+  # Notruf
+  - status: "0000"
+    declaration: "0"
+
+  - status: "8002"
+    declaration: "0"
+
+  # Einsatzbereit auf Funk
+  - status: "8003"
+    declaration: "1"
+
+  # Einsatzbereit auf Wache
+  - status: "8004"
+    declaration: "2"
+
+  # Einsatz übernommen
+  - status: "8005"
+    declaration: "3"
+
+  # Einsatzstelle eingetroffen
+  - status: "8006"
+    declaration: "4"
+
+  # Sprechwunsch
+  - status: "8007"
+    declaration: "5"
+
+  # Nicht E-breit
+  - status: "8008"
+    declaration: "6"
+
+  # Richtung Khs.
+  - status: "8009"
+    declaration: "7"
+
+  # Khs. eingetroffen
+  - status: "800A"
+    declaration: "8"
+
+  # 9
+  - status: "800B"
+    declaration: "9"
+
+  # An alle
+  - status: "80F2"
+    declaration: "An alle (A)"
+
+  # Eigensicherung
+  - status: "80F3"
+    declaration: "Eigensicherung (E)"
+
+  # Melden
+  - status: "80F4"
+    declaration: "Melden (C)"
+
+  # Telefon
+  - status: "80F5"
+    declaration: "Telefon (F)"
+
+  # Wache anfahren
+  - status: "80F6"
+    declaration: "Wache anfahren (H)"
+
+  # Sprechaufforderung
+  - status: "80F7"
+    declaration: "Sprechaufforderung (J)"
+
+  # entlassen
+  - status: "80F8"
+    declaration: "entlassen (L)"
+
+  # Sonder- /Wegerecht	
+  - status: "80F9"
+    declaration: "Sonder- Wegerecht (P)"
+
+  # unerlaubte Statusfolge
+  - status: "80FA"
+    declaration: "unerlaubte Statusfolge (U)"
+
+  # Status korrigieren
+  - status: "80FB"
+    declaration: "Status korrigieren (c)"
+
+  # positiv
+  - status: "80FC"
+    declaration: "positiv (d)"
+
+  # Standort?
+  - status: "80FD"
+    declaration: "Standort? (h)"
+
+  # negativ
+  - status: "80FE"
+    declaration: "negativ (o)"
+
+  # Gerät überprüfen
+  - status: "80FF"
+    declaration: "Gerät überprüfen (u)"
