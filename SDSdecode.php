@@ -2,9 +2,11 @@
 <?php
 
 require_once('TetraSDS/PDU.decode.php');
+require_once('TetraSDS/STATUS.decode.php');
 
 $longopts  = array(                     
-    "pdu:",            // required value: PDU of a Tetra Transport Layer SDS
+    "pdu:",            // required value for a PDU value of a Tetra transport layer SDS
+    "status:",         // required value for a STATUS value of a Tetra status SDS
     "output:",         // output format: json (--output json)
 );                                                                                   
                                                                                      
@@ -12,13 +14,14 @@ $args=array();
                                                                                      
 foreach(getopt("", $longopts) as $key => $value) $args[$key] = $value;
 
-if (!(array_key_exists('pdu', $args))) 
-{
-    fwrite(STDERR, "missing required option --pdu\n");
+if (array_key_exists('pdu', $args)) {
+    $decoded = decode_PDU($args['pdu']);
+} else if (array_key_exists('status', $args)) {
+    $decoded = decode_STATUS($args['status']);
+} else {
+    fwrite(STDERR, "missing required option either --pdu or --status\n");
     exit(1);
 }
-
-$decoded = decode_PDU($args['pdu']);
 
 if (array_key_exists('output', $args) && $args['output'] == 'json') 
 {
