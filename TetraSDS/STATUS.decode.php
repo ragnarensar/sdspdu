@@ -10,6 +10,6 @@ function decode_STATUS ($arg)
         $ret['status'] = $arg;
         $ret['declaration'] = 'not declared';
     }
-    return $ret
+    return $ret;
 }
 ?>
