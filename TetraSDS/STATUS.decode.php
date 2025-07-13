@@ -7,8 +7,8 @@ function decode_STATUS ($arg)
         $ret = $status_declaration['tetra'][$key];
     } else {
         $ret = array();
-        $ret['status'] = $arg
-        $ret['declaration'] = 'not declared'
+        $ret['status'] = $arg;
+        $ret['declaration'] = 'not declared';
     }
     return $ret
 }
