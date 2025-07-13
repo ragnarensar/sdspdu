@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php
 
-require_once('TetraSDS/PDU.encode.php');
+require_once(dirname(__FILE__) . '/TetraSDS/PDU.encode.php');
 
 $longopts  = array(
     "format:",              // if set to 'json', a JSON string with the SMS parameters is expected in 'input'
