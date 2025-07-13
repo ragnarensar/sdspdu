@@ -1,10 +1,8 @@
 <?php
-function decode_STATUS ($STATUS)
+function decode_STATUS ($arg)
 {
-    $yml_content = yaml_parse_file('TetraSDS/STATUS.declaration.yml');
-    print_r($yml_content);
-    $key = array_search($STATUS, array_column($yml_content['tetra'], 'status'));
-    $ret = $yml_content['tetra'][$key];
-    return $ret;
+    $status_declaration = yaml_parse_file(dirname(__FILE__) . '/STATUS.declaration.yml');
+    print_r($status_declaration);
+    return $status_declaration['tetra'][array_search($arg, array_column($status_declaration['tetra'], 'status'))];
 }
 ?>

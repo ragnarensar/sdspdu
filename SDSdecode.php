@@ -1,8 +1,8 @@
 #!/usr/bin/php
 <?php
 
-require_once('TetraSDS/PDU.decode.php');
-require_once('TetraSDS/STATUS.decode.php');
+require_once(dirname(__FILE__) . '/TetraSDS/PDU.decode.php');
+require_once(dirname(__FILE__) . '/TetraSDS/STATUS.decode.php');
 
 $longopts  = array(                     
     "pdu:",            // required value for a PDU value of a Tetra transport layer SDS
