@@ -8,7 +8,7 @@ function decode_STATUS ($arg)
     } else {
         $ret = array();
         $ret['status'] = $arg;
-        $ret['declaration'] = 'not declared';
+        $ret['declaration'] = 'status not declared';
     }
     return $ret;
 }
