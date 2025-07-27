@@ -1,8 +1,8 @@
 <?php
-require_once('PDU.commonfunc.php');
-require_once('PDU.encode.02.php'); // "Simple Text Messaging"
-require_once('PDU.encode.0A.php'); // "Location Information Protocol"
-require_once('PDU.encode.82.php'); // "Text Messaging"
+require_once(dirname(__FILE__) . '/PDU.commonfunc.php');
+require_once(dirname(__FILE__) . '/PDU.encode.02.php'); // "Simple Text Messaging"
+require_once(dirname(__FILE__) . '/PDU.encode.0A.php'); // "Location Information Protocol"
+require_once(dirname(__FILE__) . '/PDU.encode.82.php'); // "Text Messaging"
 
 // ETSI EN 300 392-2 V3.4.1
 // 29.4.1  PDU general structure (Table 29.10: PDU layout)

@@ -632,10 +632,18 @@ function get_LocInfoDest ($PDUbin, $StringPos)
         case 1:        // SSI
           $SubStrLen=24;
           $ret["LocInfoDest"]["name"] = "SSI";
-          $ret["LocInfoDest"]["addr"] = bindec(substr($PDUbin,$StringPos,$SubStrLen));
+          $ret["LocInfoDest"]["ssi"] = bindec(substr($PDUbin,$StringPos,$SubStrLen));
           break;
         case 2:        // SSI and MNI
           $ret["LocInfoDest"]["name"] = "SSI and MNI";
+          $SubStrLen=24;
+          $ret["LocInfoDest"]["ssi"] = bindec(substr($PDUbin,$StringPos,$SubStrLen));
+          $StringPos += $SubStrLen;
+          $SubStrLen=10;
+          $ret["LocInfoDest"]["mcc"] = bindec(substr($PDUbin,$StringPos,$SubStrLen));
+          $StringPos += $SubStrLen;
+          $SubStrLen=14;
+          $ret["LocInfoDest"]["mnc"] = bindec(substr($PDUbin,$StringPos,$SubStrLen));
           break;
         case 3:        // IP address (Version 4) RFC 791 [3]
           $ret["LocInfoDest"]["name"] = "IP address (Version 4) RFC 791 [3]";
